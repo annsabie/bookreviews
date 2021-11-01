@@ -8,11 +8,6 @@ User.hasMany(Review, {
   onDelete: 'CASCADE'
 });
 
-User.hasMany(Book, {
-  foreignKey: 'book_id',
-  onDelete: 'CASCADE'
-});
-
 Review.belongsTo(Book, {
   foreignKey: 'book_id',
   onDelete: 'CASCADE'
@@ -36,15 +31,15 @@ Book.belongsToMany(User, {
   onDelete: 'CASCADE',
 });
 
-// User.hasMany(Book, {
-//   through: {
-//     model: BookUser,
-//     unique: false
-//   },
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE',
-//   }
-// );
+User.belongsToMany(Book, {
+  through: {
+    model: BookUser,
+    unique: false
+  },
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+  }
+);
 //Review.belongsTo(user)//
 //Review.belongsTo(book)//
 //Book.belongsToMany(User)//

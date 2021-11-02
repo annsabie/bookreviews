@@ -2,28 +2,28 @@ const { Review } = require('../models');
 
 const reviewData = [
   {
-    reviews: "Transcendent Kingdom",
-    book_id: "Yaa Gyasi's stunning follow-up to her acclaimed national bestseller Homegoing is a powerful, raw, intimate, deeply layered novel about a Ghanaian family in Alabama.",
-    user_id: "Yaa Gyasi",
+    reviews: "Awesome",
+    book_id: 2,
+    user_id: 4,
   },
   {
-    reviews: "Transcendent Kingdom",
-    book_id: "Yaa Gyasi's stunning follow-up to her acclaimed national bestseller Homegoing is a powerful, raw, intimate, deeply layered novel about a Ghanaian family in Alabama.",
-    user_id: "Yaa Gyasi",
+    reviews: "Horrible",
+    book_id: 4,
+    user_id: 1,
   },
   {
-    reviews: "Transcendent Kingdom",
-    book_id: "Yaa Gyasi's stunning follow-up to her acclaimed national bestseller Homegoing is a powerful, raw, intimate, deeply layered novel about a Ghanaian family in Alabama.",
-    user_id: "Yaa Gyasi",
+    reviews: "Good",
+    book_id: 3,
+    user_id: 2,
   },
   {
-    reviews: "Transcendent Kingdom",
-    book_id: "Yaa Gyasi's stunning follow-up to her acclaimed national bestseller Homegoing is a powerful, raw, intimate, deeply layered novel about a Ghanaian family in Alabama.",
-    user_id: "Yaa Gyasi",
+    reviews: "Stupendous",
+    book_id: 1,
+    user_id: 3,
   },
   
 ];
 
-const reviewBook = () => Review.bulkCreate(reviewData);
+const reviewSeed = () => Review.bulkCreate(reviewData);
 
-module.exports = reviewBook;
+module.exports = reviewSeed;

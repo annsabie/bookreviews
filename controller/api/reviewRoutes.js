@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
       include: [{ model: Book }],
     });
 
-    if (!categoryData) {
+    if (!reviewData) {
       res.status(404).json({ message: 'No review found with that id!' });
       return;
     }

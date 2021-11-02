@@ -1,24 +1,29 @@
- <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+<div class = "card">
+    <div class="card-header">
+        <h2>Sign Up</h2>
+    </div>
+    <div id="signup" role="tabpanel">
+      <form id="sign-up-form" class="card-body">
+          <div>
+              <label for="firstname-input-signup">First-Name</label>
+              <input type="text" id="firstname-input-signup"/>
+          </div>
+          <div>
+              <label for="lastname-input-signup">Last-Name</label>
+              <input type="text" id="lastname-input-signup"/>
+          </div>
+          <div>
+              <label for="email-input-signup">Email</label>
+              <input type="text" id="email-input-signup"/>
+          </div>
+          <div>
+              <label for="password-input-signup">Password</label>
+              <input type="text" id="password-input-signup"/>
+          </div>
+          <button type="submit" id="signup-btn" class="btn">Signup</button>
+          <a href="/login">Login</a>
+      </form>
+    </div>
 </div>
 
-{{!-- need linked js for sign up form submission --}}
+<script src="/js/signup.js"></script>

@@ -1,13 +1,27 @@
 const router = require('express').Router();
 const { User, Book, BookUser, Review } = require('../models');
 
-router.get('/homepage', async(req, res) => {
+router.get('/', async(req, res) => {
     try {
         const mapData = await Book.findAll();
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
         console.log(bookData);
         res.render('homepage', { bookData });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
+
+});
+
+router.get('/find-books', async(req, res) => {
+    try {
+        const mapData = await Book.findAll();
+        const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
+
+        console.log(bookData);
+        res.render('find-books', { bookData });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

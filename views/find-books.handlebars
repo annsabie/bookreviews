@@ -1,1 +1,12 @@
-<h3>search for new books here!</h3>
+<div class="card">
+   {{#each bookData as |book|}}
+
+  <h2 class="card-header">{{book.book_name}}</h2>
+  <div class="card-body">
+    <h5 class="card-title">{{book.author_name}}</h5>
+    <p class="card-text">{{book.book_description}}</p>
+    <a href="#" class="btn btn-primary">Add to your books</a>
+  </div>
+     {{/each}}
+</div>
+

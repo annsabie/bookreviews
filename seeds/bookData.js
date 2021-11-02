@@ -27,3 +27,4 @@ const bookData = [
 const seedBook = () => Book.bulkCreate(bookData);
 
 module.exports = seedBook;
+

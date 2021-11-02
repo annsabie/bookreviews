@@ -22,13 +22,50 @@ router.get('/login', async(req, res) => {
     }
 })
 
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
+router.get('/logout', async(req, res) => {
+    try {
+        res.render('logout');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
-//     res.render('login');
-// });
+router.get('/signup', async(req, res) => {
+    try {
+        res.render('signup');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
+router.get('/find-books', async(req, res) => {
+    try {
+        res.render('find-books');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+router.get('/your-books', async(req, res) => {
+    try {
+        res.render('your-books');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/your-reviews', async(req, res) => {
+    try {
+        res.render('your-reviews');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/find-books', async(req, res) => {
+    try {
+        res.render('your-books');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 module.exports = router;

@@ -1,16 +1,17 @@
 <h3>Here are all of the reviews you've written</h3>
 
 <div class="card" id="reviewsDiv">
-      {{!-- {{#each reviewData as |review|}} --}}
+      {{#each newReviewData as |review|}}
   <h3 class="card-header">Review Title</h3>
   <div class="card-body">
     <h5 class="card-title">Book Title</h5>
     <h6 class="card-title">By: Book Author</h6>
-    <p class="card-text">Book review text content</p>
+    <p class="card-text">{{review.reviews}}</p>
     <a href="#" class="btn btn-primary" id="writeAReview">Update review </a>
     <a href="#" class="btn btn-primary" id="writeAReview">Delete Review</a>
   </div>
+  {{/each}}
 </div>
-{{!-- 
+
 <script src="/js/yourReviews.js"></script>
- --}}
+

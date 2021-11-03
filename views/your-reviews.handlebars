@@ -1,12 +1,12 @@
 <h3>Here are all of the reviews you've written</h3>
 
 <div class="card" id="reviewsDiv">
-      {{#each newReviewData as |review|}}
+      {{#each newReviewData as |review|}}  
   <h3 class="card-header">Review Of {{review.book.book_name}}</h3>
   <div class="card-body">
     <h5 class="card-title">By: {{review.book.author_name}}</h5>
     <h6 class="card-text" id="reviewText">{{review.reviews}}</h6>
-    <a href="#" class="btn btn-primary" id="updateReview">Update review </a>
+    <button href="#" class="btn btn-primary updateReview">Update review </button>
     <a href="#" class="btn btn-primary" id="writeAReview">Delete Review</a>
   </div>
   {{/each}}

@@ -7,7 +7,7 @@ router.get('/', async(req, res) => {
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
         console.log(bookData);
-        res.render('homepage', { bookData, loggedIn:req.session.logged_in });
+        res.render('homepage', { bookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -21,7 +21,7 @@ router.get('/find-books', async(req, res) => {
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
         console.log(bookData);
-        res.render('find-books', { bookData, loggedIn:req.session.logged_in });
+        res.render('find-books', { bookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -36,11 +36,9 @@ router.get('/login', async(req, res) => {
     }
 });
 
-
-
 router.get('/logout', async(req, res) => {
     try {
-        res.render('logout', {loggedIn:req.session.logged_in});
+        res.render('logout', { loggedIn: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -61,19 +59,19 @@ router.get('/your-reviews', async(req, res) => {
         })
         const newReviewData = reviewData.map(reviewObj => reviewObj.get({ plain: true }))
         console.log(newReviewData);
-        res.render('your-reviews', { newReviewData, loggedIn:req.session.logged_in });
+        res.render('your-reviews', { newReviewData, loggedIn: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// router.get('/your-reviews', async(req, res) => {
-//     try {
-//         res.render('your-reviews');
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
+router.get('/addBook', async(req, res) => {
+    try {
+        res.render('addBook');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/your-books', async(req, res) => {
     try {
@@ -92,7 +90,7 @@ router.get('/your-books', async(req, res) => {
 
         console.log('postData :>> ', userData);
         console.log('commentData :>> ', newBookData);
-        res.render('your-books', { userData, newBookData, loggedIn:req.session.logged_in});
+        res.render('your-books', { userData, newBookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

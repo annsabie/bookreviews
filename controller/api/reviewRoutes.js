@@ -26,6 +26,21 @@ router.post('/', async(req, res) => {
         res.status(400).json(err);
     }
 });
+router.put('/:id', (req, res) => {
+    // update a category by its `id` value
+    Review.update({
+
+            review: req.body.reviews,
+        }, {
+            where: {
+                id: req.params.id,
+            },
+        })
+        .then((reviewData) => {
+            res.json(reviewData);
+        })
+        .catch((err) => res.json(err));
+});
 
 router.delete('/:id', async(req, res) => {
     try {

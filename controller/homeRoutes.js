@@ -34,7 +34,9 @@ router.get('/login', async(req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
+
 
 router.get('/logout', async(req, res) => {
     try {
@@ -45,31 +47,33 @@ router.get('/logout', async(req, res) => {
 })
 
 router.get('/signup', async(req, res) => {
-        try {
-            res.render('signup');
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    })
-    // router.get('/your-reviews', async(req, res) => {
-    //     try {
-    //         const reviewData = await Review.findAll({
-    //             include: [{ model: Book }],
-    //         })
-    //         const newReviewData = reviewData.map(reviewObj => reviewObj.get({ plain: true }))
-    //         res.status(200).json(reviewData);
-    //         res.render('your-reviews', { reviewData });
-    //     } catch (err) {
-    //         res.status(500).json(err);
-    //     }
-    // });
-router.get('/your-reviews', async(req, res) => {
     try {
-        res.render('your-reviews');
+        res.render('signup');
     } catch (err) {
         res.status(500).json(err);
     }
 })
+
+router.get('/your-reviews', async(req, res) => {
+    try {
+        const reviewData = await Review.findAll({
+            include: [{ model: Book }],
+        })
+        const newReviewData = reviewData.map(reviewObj => reviewObj.get({ plain: true }))
+        console.log(newReviewData);
+        res.render('your-reviews', { newReviewData });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// router.get('/your-reviews', async(req, res) => {
+//     try {
+//         res.render('your-reviews');
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 router.get('/your-books', async(req, res) => {
     try {

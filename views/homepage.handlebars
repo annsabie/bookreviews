@@ -1,7 +1,8 @@
-<div class="card">
+<div class="card" id="card-container">
    {{#each bookData as |book|}}
 
   <h2 class="card-header">{{book.book_name}}</h2>
+  
   <div class="card-body">
     <h5 class="card-title">{{book.author_name}}</h5>
     <p class="card-text">{{book.book_description}}</p>
@@ -10,3 +11,5 @@
      {{/each}}
 </div>
 
+
+<script src="/js/yourBooks.js"></script>

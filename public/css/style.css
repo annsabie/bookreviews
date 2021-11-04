@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+    #signup{
+    text-align: center;
+    }
+    .card-header{
+    text-align: center;
+    }
+    #sign-up-form, #login-form{
+    margin: 3%;
+    }
+    #signup-box{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    /* background-color: tomato; */
+    border-radius: 3px;
+    }
+    #login-box{
+    width: 360px;
+    height: 550px;
+    margin: auto;
+    border-radius: 30px;
+    }
+    form{
+    width: 300px;
+    margin-left: 20px;
+    }
+    form label{
+    display: flex;
+    margin-top: 20px;
+    }
+    form input{
+    width: 100%;
+    }
+    
+    #signup-btn, #login-btn{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: #FFFF00
+    }
+    #loginHereLink{
+    padding-top: 70px;
+    }
+    #signupHereLink{
+    padding-bottom: 20px;
+    text-align: center;
+    }
+    
+    #formReview{
+    text-align: center;
+    }
+    #booksDiv{
+    text-align: center;
+    }
+    

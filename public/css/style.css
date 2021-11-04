@@ -71,3 +71,36 @@ form input {
 #booksDiv {
     text-align: center;
 }
+
+#homepageText {
+    margin-top: 3%;
+    color: Black;
+    background-color: whitesmoke;
+    opacity: 85%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 4%;
+}
+
+#homepageText h4 {
+    font-family: serif;
+    color: #FF737F;
+    font-size: 90px;
+}
+
+#subtitle {
+    font-family: serif;
+    color: #C989FF;
+    font-size: 60px;
+}
+
+#homepageText p {
+    font-size: 40px;
+    color: #60B9FF;
+}
+
+footer {
+    margin-top: 30px;
+    background-color: #D4ECFF;
+    margin-bottom: 0%;
+}

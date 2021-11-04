@@ -23,7 +23,6 @@ const createNewReview = async function(bookId, reviewContent) {
         body: JSON.stringify({
             reviews: reviewContent,
             book_id: bookId,
-            // user_id => grab in POST request from req.session.user_id
         }),
         headers: { 'Content-Type': 'application/json' },
     });
@@ -35,20 +34,3 @@ const createNewReview = async function(bookId, reviewContent) {
         alert("didn't work bitch!");
     }
 }
-
-// const updateReviewRoute = async function(event) {
-//     const { text } = require("express");
-//     const response = await fetch('/api/reviews', {
-//         method: 'UPDATE',
-//         body: JSON.stringify({
-//             reviews: reviewText.value
-//         }),
-//         headers: { 'Content-Type': 'application/json' },
-//     });
-
-//     if (response.ok) {
-//         document.location.replace('/');
-//     } else {
-//         alert("didn't work bitch!");
-//     }
-// }

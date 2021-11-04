@@ -107,6 +107,14 @@ router.get('/your-books', async(req, res) => {
 
 });
 
+router.get('/nyt', async(req, res) => {
+    try {
+        res.render('nyt');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+        
 router.get('/your-reviews', async(req, res) => {
     try {
         const reviewDataRaw = await Review.findAll({

@@ -1,12 +1,18 @@
-<div class="card">
+
+
+
+<div class="card" id="card-container" >
    {{#each bookData as |book|}}
-
-  <h2 class="card-header">{{book.book_name}}</h2>
+ <div id="book-id{{book.id}}"style="display: none;">{{book.id}}</div>
+  <h2 class="card-header" id="your-book-name" data-book-id="{{book.id}}">{{book.book_name}}</h2>
   <div class="card-body">
-    <h5 class="card-title">{{book.author_name}}</h5>
-    <p class="card-text">{{book.book_description}}</p>
-    <a href="#" class="btn btn-primary">Add to your books</a>
+    <h5 class="card-title" id="your-book-authorname">{{book.author_name}}</h5>
+    {{!-- <input type="hidden" value={{book.id}} /> --}}
+    <p class="card-text" id="your-book-bookdescription">{{book.book_description}}</p>
+    <a href="#" id="addtoyourbook{{book.id}}"class="btn btn-primary" onclick=addBookHandler({{this.book.id}})>Add to your books</a>
   </div>
-     {{/each}}
-</div>
+      {{/each}}
+     </div> 
+ </div> 
 
+<script src="/js/yourBooks.js"></script>

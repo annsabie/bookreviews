@@ -5,7 +5,7 @@ const addAReviewButton = document.getElementById('writeAReview');
 const booksDiv = document.getElementById('booksDiv')
 const reviewTextBox = document.createElement("textarea");
 
-addAReviewButton.addEventListener(click, function() {
+addAReviewButton.addEventListener("click", function() {
     console.log("I have been clicked!!");
     reviewTextBox.appendChild(booksDiv);
 });

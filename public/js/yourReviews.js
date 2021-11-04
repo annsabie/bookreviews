@@ -8,19 +8,6 @@ const updateReviewEventHandler = async function(event) {
     event.target.parentElement.appendChild(textBox);
     event.target.parentElement.appendChild(submitButton);
 
-    // const response = await fetch('/api/reviews', {
-    //     method: 'UPDATE',
-    //     body: JSON.stringify({
-    //         reviews: reviewText.value
-    //     }),
-    //     headers: { 'Content-Type': 'application/json' },
-    // });
-
-    //     if (response.ok) {
-    //         document.location.replace('/');
-    //     } else {
-    //         alert("didn't work bitch!");
-    //     }
 };
 document.querySelectorAll('.updateReview').forEach(element => {
     element.addEventListener('click', updateReviewEventHandler);

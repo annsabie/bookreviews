@@ -1,7 +1,7 @@
 <h3>Here are all of the reviews you've written</h3>
 
 <div class="card" id="reviewsDiv">
-      {{#each newReviewData as |review|}}  
+      {{#each reviewData as |review|}}  
   <h3 class="card-header">Review Of {{review.book.book_name}}</h3>
   <div class="card-body">
     <h5 class="card-title">By: {{review.book.author_name}}</h5>
@@ -9,7 +9,7 @@
 
     <button href="#" class="btn btn-primary updateReview">Update review </button>
    
-    <button href="#" class="btn btn-primary" id="writeAReview">Delete Review</button>
+    <button href="#" class="btn btn-primary">Delete Review</button>
   </div>
   {{/each}}
 </div>

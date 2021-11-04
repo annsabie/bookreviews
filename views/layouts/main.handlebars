@@ -15,6 +15,7 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
+        <img src="/images/book.png" alt="book icon">
         <a href="/">Allbooks</a>
       </h1>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,14 +25,14 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/find-books">Find Books</a>
+        <a class="nav-link" href="/find-books">Library</a>
       </li>
       {{#if loggedIn}}
        <li class="nav-item">
-        <a class="nav-link" href="/your-books">Your Books</a>
+        <a class="nav-link" href="/your-books">Book Shelf</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/your-reviews">Your Reviews</a>
+        <a class="nav-link" href="/your-reviews">Your Thoughts</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/addBook">Add a Book</a>

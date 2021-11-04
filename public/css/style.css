@@ -1,61 +1,73 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    }
-    #signup{
+}
+
+#signup {
     text-align: center;
-    }
-    .card-header{
+}
+
+.card-header {
     text-align: center;
-    }
-    #sign-up-form, #login-form{
+}
+
+#sign-up-form,
+#login-form {
     margin: 3%;
-    }
-    #signup-box{
+}
+
+#signup-box {
     width: 360px;
     height: 620px;
     margin: auto;
     /* background-color: tomato; */
     border-radius: 3px;
-    }
-    #login-box{
+}
+
+#login-box {
     width: 360px;
     height: 550px;
     margin: auto;
     border-radius: 30px;
-    }
-    form{
+}
+
+form {
     width: 300px;
     margin-left: 20px;
-    }
-    form label{
+}
+
+form label {
     display: flex;
     margin-top: 20px;
-    }
-    form input{
+}
+
+form input {
     width: 100%;
-    }
-    
-    #signup-btn, #login-btn{
+}
+
+#signup-btn,
+#login-btn {
     width: 320px;
     height: 35px;
     margin-top: 20px;
     border: none;
     background-color: #FFFF00
-    }
-    #loginHereLink{
+}
+
+#loginHereLink {
     padding-top: 70px;
-    }
-    #signupHereLink{
+}
+
+#signupHereLink {
     padding-bottom: 20px;
     text-align: center;
-    }
-    
-    #formReview{
+}
+
+#formReview {
     text-align: center;
-    }
-    #booksDiv{
+}
+
+#booksDiv {
     text-align: center;
-    }
-    
+}

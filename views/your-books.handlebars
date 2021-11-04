@@ -1,18 +1,17 @@
 <h3>Here are all of the books you have saved</h3>
 
 <div class="card" id="booksDiv">
-  <h2 class="card-header">Book Title</h2>
+  {{#each userBookData as |userBook|}}  
+  <h2 class="card-header">{{userBook.book_name}}</h2>
   <div class="card-body">
-    <h5 class="card-title">Book author Name</h5>
-    <p class="card-text">Description</p>
-    <a href="#" class="btn btn-primary" id="writeAReview">Write a review</a>
-    <a href="#" class="btn btn-primary" id="writeAReview">Delete from your books</a>
+    <h5 class="card-title">{{userBook.author_name}}</h5>
+    <p class="card-text">{{userBook.book_description}}</p>
+    <button href="#" class="btn btn-primary addReview" id="{{userBook.book_id}}">Write a review</button>
+    <button href="#" class="btn btn-primary" id="writeAReview">Delete from your books</button>
   </div>
-<form>
-    <input type="textarea" id= "reviewTextBox">
-    <input type="submit" value="Submit">
-</form>
+{{/each}}
 </div>
 
+<script src="/js/addReview.js"></script>
 <script src="/js/yourBooks.js"></script>
 

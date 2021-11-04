@@ -1,7 +1,9 @@
 const deleteReview = async function(event) {
     console.log("clicked", event)
     event.preventDefault();
-    const id = document.getElementById("idnumber").textContent
+    const review_id = event.target.parentElement.getAttribute("bookId");
+
+    console.log(review_id);
 
     await fetch(`api/reviews/${id}`, {
         method: "DELETE",
@@ -10,12 +12,16 @@ const deleteReview = async function(event) {
         }),
         headers: {
             "Content-Type": "application/json",
-          },
+        },
     })
-    .then(function() {
-        document.location.replace("/your-reviews");
-    })
-    .catch(err => console.log(err))
+    if (response.ok) {
+        alert('i am ok');
+        document.location.reload;
+    } else {
+        alert("didn't work bitch!");
+    }
 }
 
-document.querySelector("#deleteReview").addEventListener("click", deleteReview);
+document.querySelectorAll('.deleteReview').forEach(element => {
+    element.addEventListener('click', deleteReview);
+});

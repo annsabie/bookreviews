@@ -79,8 +79,6 @@ router.get('/addBook', async(req, res) => {
 router.get('/your-books', async(req, res) => {
     try {
         console.log('object :>> ', req.session);
-        // const userId = req.session.user_id;
-
         const bookUserRaw = await BookUser.findAll({
             where: {
                 user_id: req.session.user_id
@@ -114,7 +112,7 @@ router.get('/nyt', async(req, res) => {
         res.status(500).json(err);
     }
 });
-        
+
 router.get('/your-reviews', async(req, res) => {
     try {
         const reviewDataRaw = await Review.findAll({
@@ -122,19 +120,7 @@ router.get('/your-reviews', async(req, res) => {
                 user_id: req.session.user_id
             }
         });
-        const reviewData = reviewDataRAw.map(reviewObj => reviewObj.get({ plain: true }))
-            // const bookDataRaw = await Book.findAll();
-            // const bookData = bookDataRaw.map(bookObj => bookObj.get({ plain: true }))
-
-        // const userBookData = bookData.filter(bookObj => {
-        //     return bookUserData.some(bookUserObj => {
-        //         if (bookUserObj.book_id === bookObj.id) {
-        //             return true;
-        //         } else {
-        //             return false;
-        //         }
-        //     })
-        // })
+        const reviewData = reviewDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
         res.render('your-reviews', { reviewData });
     } catch (err) {
         console.log(err);

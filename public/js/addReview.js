@@ -10,6 +10,7 @@ const writeReviewEventHandler = async function(event) {
     event.target.parentElement.appendChild(submitButton);
     submitButton.addEventListener('click', function(event) {
         let reviewContent = textBox.value;
+
         createNewReview(event.target.book_id, reviewContent);
     })
 };
@@ -28,8 +29,8 @@ const createNewReview = async function(bookId, reviewContent) {
     });
 
     if (response.ok) {
-        document.location.reload;
-        alert('I worked!');
+        document.location.replace('your-reviews');
+        alert('I worked!')
     } else {
         alert("didn't work bitch!");
     }

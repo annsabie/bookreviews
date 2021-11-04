@@ -12,7 +12,17 @@
 <input type="textarea" id= "reviewTextBox">
 <input type="submit" value="Submit">
 </form>
+  {{#each userBookData as |userBook|}}  
+  <h2 class="card-header">{{userBook.book_name}}</h2>
+  <div class="card-body">
+    <h5 class="card-title">{{userBook.author_name}}</h5>
+    <p class="card-text">{{userBook.book_description}}</p>
+    <button href="#" class="btn btn-primary addReview" id="{{userBook.book_id}}">Write a review</button>
+    <button href="#" class="btn btn-primary" id="writeAReview">Delete from your books</button>
+  </div>
+{{/each}}
 </div>
 
+<script src="/js/addReview.js"></script>
 <script src="/js/yourBooks.js"></script>
 

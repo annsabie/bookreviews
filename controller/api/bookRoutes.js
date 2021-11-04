@@ -56,4 +56,9 @@ router.delete('/:id', async(req, res) => {
     }
 });
 
+router.post('/addUserBook', async(req, res) => {
+    const newUserBook = await BookUser.create({ book_id: req.body.book_id, user_id: req.body.user_id })
+    res.status(200).json(newUserBook);
+})
+
 module.exports = router;

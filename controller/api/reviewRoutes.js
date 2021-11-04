@@ -20,16 +20,17 @@ router.get('/:id', async(req, res) => {
 
 router.post('/', async(req, res) => {
     try {
-        const reviewData = await Review.create(req.body);
+        const reviewData = await Review.create({...req.body, user_id: req.session.user_id });
         res.status(200).json(reviewData);
     } catch (err) {
         res.status(400).json(err);
     }
 });
+
 router.put('/:id', (req, res) => {
     Review.update({
 
-            review: req.body.reviews,
+            reviews: req.body.reviews,
         }, {
             where: {
                 id: req.params.id,

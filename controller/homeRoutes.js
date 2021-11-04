@@ -54,12 +54,15 @@ router.get('/signup', async(req, res) => {
 
 router.get('/your-reviews', async(req, res) => {
     try {
-        const reviewData = await Review.findAll({
-            include: [{ model: Book }],
-        })
-        const newReviewData = reviewData.map(reviewObj => reviewObj.get({ plain: true }))
-        console.log(newReviewData);
-        res.render('your-reviews', { newReviewData, loggedIn: req.session.logged_in });
+        const reviewDataRaw = await Review.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            include: [{ model: Book }]
+        });
+        const reviewData = reviewDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
+
+        res.render('your-reviews', { reviewData });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -75,22 +78,56 @@ router.get('/addBook', async(req, res) => {
 
 router.get('/your-books', async(req, res) => {
     try {
-        const userId = 1;
-        const bookData = await Book.findAll();
-        const newBookData = bookData.map(bookObj => bookObj.get({ plain: true }))
-        const mapData = await User.findAll();
-        let userData = mapData.map(userObj => userObj.get({ plain: true }));
+        console.log('object :>> ', req.session);
+        // const userId = req.session.user_id;
 
-        userData = userData.map(bookObj => {
-            const usersBooks = newBookData.filter(user => {
-                return user.book_id === bookObj.id
+        const bookUserRaw = await BookUser.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+        const bookUserData = bookUserRaw.map(bookUserObj => bookUserObj.get({ plain: true }))
+        const bookDataRaw = await Book.findAll();
+        const bookData = bookDataRaw.map(bookObj => bookObj.get({ plain: true }))
+
+        const userBookData = bookData.filter(bookObj => {
+            return bookUserData.some(bookUserObj => {
+                if (bookUserObj.book_id === bookObj.id) {
+                    return true;
+                } else {
+                    return false;
+                }
             })
-            return {...bookObj, usersBooks }
         })
+        res.render('your-books', { userBookData });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
 
-        console.log('postData :>> ', userData);
-        console.log('commentData :>> ', newBookData);
-        res.render('your-books', { userData, newBookData, loggedIn: req.session.logged_in });
+});
+
+router.get('/your-reviews', async(req, res) => {
+    try {
+        const reviewDataRaw = await Review.findAll({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+        const reviewData = reviewDataRAw.map(reviewObj => reviewObj.get({ plain: true }))
+            // const bookDataRaw = await Book.findAll();
+            // const bookData = bookDataRaw.map(bookObj => bookObj.get({ plain: true }))
+
+        // const userBookData = bookData.filter(bookObj => {
+        //     return bookUserData.some(bookUserObj => {
+        //         if (bookUserObj.book_id === bookObj.id) {
+        //             return true;
+        //         } else {
+        //             return false;
+        //         }
+        //     })
+        // })
+        res.render('your-reviews', { reviewData });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

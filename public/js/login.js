@@ -14,7 +14,7 @@ const loginFormHandler = async function(event) {
     });
 
     if (response.ok) {
-        document.location.href = '/';
+        document.location.replace('/your-books');
     } else {
         alert('Failed to login');
     }

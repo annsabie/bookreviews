@@ -45,13 +45,13 @@ router.get('/logout', async(req, res) => {
 })
 
 router.get('/signup', async(req, res) => {
-    try {
-        res.render('signup');
-    } catch (err) {
-        res.status(500).json(err);
-    }
-})
-
+        try {
+            res.render('signup');
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    })
+    //add the book id and book title and book author
 router.get('/your-reviews', async(req, res) => {
     try {
         const reviewDataRaw = await Review.findAll({
@@ -60,7 +60,10 @@ router.get('/your-reviews', async(req, res) => {
             },
             include: [{ model: Book }]
         });
+        //const bookDataRaw = await Book.findAll();
+        //const bookData = bookDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
         const reviewData = reviewDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
+        console.log(reviewData);
 
         res.render('your-reviews', { reviewData });
     } catch (err) {

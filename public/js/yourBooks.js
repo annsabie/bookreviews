@@ -121,6 +121,15 @@ async function addBookHandler(htr){
 // const booksDiv = document.getElementById('booksDiv')
 // const reviewTextBox = document.createElement("textarea");
 
+
+
+
+
+
+const addAReviewButton = document.getElementById('writeAReview');
+const booksDiv = document.getElementById('booksDiv')
+const reviewTextBox = document.createElement("textarea");
+
 // addAReviewButton.addEventListener(click, function () {
 //     console.log("I have been clicked!!");
 //     reviewTextBox.appendChild(booksDiv);
@@ -128,6 +137,7 @@ async function addBookHandler(htr){
 // const addAReviewButton = document.getElementById('writeAReview');
 // const booksDiv = document.getElementById('booksDiv')
 // const reviewTextBox = document.createElement("textarea");
+
 
 // addAReviewButton.addEventListener("click", function () {
 //     console.log("I have been clicked!!");

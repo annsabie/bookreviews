@@ -1,17 +1,6 @@
-<h3>Here are all of the books you have saved</h3>
+<h3>Your Bookshelf</h3>
 
 <div class="card" id="booksDiv">
-<h2 class="card-header">Book Title {{book.book_name}}</h2>
-<div class="card-body" id="yourbooksBody">
-<h5 class="card-title">Book author Name {{book.author_name}}</h5>
-<p class="card-text">Description {{book.book_description}}</p>
-<a href="#" class="btn btn-primary" id="writeAReview">Write a review</a>
-<a href="#" class="btn btn-primary" id="writeAReview">Delete from your books</a>
-</div>
-<form id="formReview">
-<input type="textarea" id= "reviewTextBox">
-<input type="submit" value="Submit">
-</form>
   {{#each userBookData as |userBook|}}  
   <h2 class="card-header">{{userBook.book_name}}</h2>
   <div class="card-body">

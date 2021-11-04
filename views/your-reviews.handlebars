@@ -3,8 +3,8 @@
 <div class="card" id="reviewsDiv">
       {{#each reviewData as |review|}}  
   <h3 class="card-header">Review Of {{review.book.book_name}}</h3>
-  <h4 class="idnumber" id="idnumber">{{review.id}}</h4>
-  <div class="card-body">
+  <h4 class="idnumber" >{{review.id}}</h4>
+  <div class="card-body" bookId={{review.book.id}} idnumber={{review.id}}>
     <h5 class="card-title">By: {{review.book.author_name}}</h5>
     <h6 class="card-text" id="reviewText">{{review.reviews}}</h6>
 

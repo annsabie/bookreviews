@@ -27,7 +27,7 @@ router.post('/', async(req, res) => {
     }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/update/:id', (req, res) => {
     Review.update({
 
             reviews: req.body.reviews,

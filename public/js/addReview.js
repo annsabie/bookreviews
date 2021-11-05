@@ -8,10 +8,13 @@ const writeReviewEventHandler = async function(event) {
     submitButton.innerHTML = 'submit';
     event.target.parentElement.appendChild(textBox);
     event.target.parentElement.appendChild(submitButton);
-    submitButton.addEventListener('click', function(event) {
-        let reviewContent = textBox.value;
 
-        createNewReview(event.target.book_id, reviewContent);
+    submitButton.addEventListener('click', function(event) {
+        const book_id = event.target.parentElement.getAttribute("bookId");
+        let reviewContent = textBox.value;
+        alert(book_id);
+
+        createNewReview(book_id, reviewContent);
     })
 };
 document.querySelectorAll('.addReview').forEach(element => {

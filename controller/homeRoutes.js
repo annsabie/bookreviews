@@ -46,7 +46,7 @@ router.get('/logout', async(req, res) => {
 
 router.get('/signup', async(req, res) => {
         try {
-            res.render('signup');
+            res.render('signup', { loggedIn: req.session.logged_in });
         } catch (err) {
             res.status(500).json(err);
         }
@@ -65,7 +65,7 @@ router.get('/your-reviews', async(req, res) => {
         const reviewData = reviewDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
         console.log(reviewData);
 
-        res.render('your-reviews', { reviewData });
+        res.render('your-reviews', { reviewData, loggedIn: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -73,7 +73,7 @@ router.get('/your-reviews', async(req, res) => {
 
 router.get('/addBook', async(req, res) => {
     try {
-        res.render('addBook');
+        res.render('addBook', { loggedIn: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -100,7 +100,7 @@ router.get('/your-books', async(req, res) => {
                 }
             })
         })
-        res.render('your-books', { userBookData });
+        res.render('your-books', { userBookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -110,7 +110,7 @@ router.get('/your-books', async(req, res) => {
 
 router.get('/nyt', async(req, res) => {
     try {
-        res.render('nyt');
+        res.render('nyt', { loggedIn: req.session.logged_in });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -124,7 +124,7 @@ router.get('/your-reviews', async(req, res) => {
             }
         });
         const reviewData = reviewDataRaw.map(reviewObj => reviewObj.get({ plain: true }))
-        res.render('your-reviews', { reviewData });
+        res.render('your-reviews', { reviewData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

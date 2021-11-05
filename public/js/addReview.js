@@ -33,8 +33,7 @@ const createNewReview = async function(bookId, reviewContent) {
 
     if (response.ok) {
         document.location.replace('your-reviews');
-        alert('I worked!')
     } else {
-        alert("didn't work bitch!");
+        alert("couldn't add review");
     }
 };

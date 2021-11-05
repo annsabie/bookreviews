@@ -16,7 +16,7 @@ const addBookHandler = async function(event) {
     });
 
     if (response.ok) {
-        alert("Book Added!")
+
     } else {
         alert("Cannot add book");
     }

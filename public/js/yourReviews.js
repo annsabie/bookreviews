@@ -32,9 +32,8 @@ const updateReviewRoute = async function(review_id, book_id, reviewContent) {
     });
 
     if (response.ok) {
-        alert('i am ok');
-        document.location.reload;
+        document.location.reload();
     } else {
-        alert("didn't work bitch!");
+        alert("could not update review");
     }
 };

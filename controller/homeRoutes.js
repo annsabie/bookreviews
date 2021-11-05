@@ -115,7 +115,7 @@ router.get('/nyt', async(req, res) => {
         res.status(500).json(err);
     }
 });
-///comment city
+
 router.get('/your-reviews', async(req, res) => {
     try {
         const reviewDataRaw = await Review.findAll({

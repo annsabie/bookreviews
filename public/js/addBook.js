@@ -3,8 +3,8 @@ const addBookHandler = async function(event) {
 
     const title = document.querySelector("#title");
     const author = document.querySelector("#author");
-    const description= document.querySelector("#description");
-   
+    const description = document.querySelector("#description");
+
     const response = await fetch("/api/books", {
         method: 'POST',
         body: JSON.stringify({

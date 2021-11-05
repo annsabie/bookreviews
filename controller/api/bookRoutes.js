@@ -40,31 +40,11 @@ router.post('/', async(req, res) => {
 
 router.post('/add-your-book', async(req, res) => {
     try {
-        // console.log('object :>> ', req.session);
         const addBookUser = await BookUser.create({
             user_id: req.session.user_id,
             book_id: req.body.book_id
         });
-        /*
-        const bookUserData = bookUserRaw.map(bookUserObj => bookUserObj.get({ plain: true }))
-
-        const bookDataRaw = await Book.findByPk(req.params.id);
-        const bookData = bookDataRaw.map(bookObj => bookObj.get({ plain: true }))
-        */
-
-        // const userBookData = bookData.filter(bookObj => {
-        //     return bookUserData.some(bookUserObj => {
-        //         if (bookUserObj.book_id === bookObj.id) {
-        //             return true;
-        //         } else {
-        //             return false;
-        //         }
-        //     })
-        // })
-        console.log(addBookUser);
         res.status(200).json("success");
-
-        //res.render('your-books', { userBookData });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -83,7 +63,6 @@ router.delete('/:id', async(req, res) => {
             res.status(404).json({ message: 'No book found with this id!' });
             return;
         }
-
         res.status(200).json({ message: "Book deleted!" });
     } catch (err) {
         res.status(500).json(err);

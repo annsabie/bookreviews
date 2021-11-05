@@ -37,4 +37,4 @@ const createNewReview = async function(bookId, reviewContent) {
     } else {
         alert("didn't work bitch!");
     }
-}
+};

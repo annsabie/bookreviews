@@ -39,12 +39,18 @@ router.post('/', async(req, res) => {
 });
 
 router.post('/add-your-book', async(req, res) => {
-    try {
+    // bookId,
+    // bookName,
+    // authorName,
+    // bookDescription
+    // try {
         // console.log('object :>> ', req.session);
         const addBookUser = await BookUser.create({
             user_id: req.session.user_id,
-            book_id: req.body.book_id
+            book_id: req.body.bookId,
         });
+        console.log(req.body)
+
         /*
         const bookUserData = bookUserRaw.map(bookUserObj => bookUserObj.get({ plain: true }))
 
@@ -61,14 +67,14 @@ router.post('/add-your-book', async(req, res) => {
         //         }
         //     })
         // })
-        console.log(addBookUser);
+        // console.log(addBookUser);
         res.status(200).json("success");
 
         //res.render('your-books', { userBookData });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    };
+    // } catch (err) {
+    //     console.log(err);
+    //     res.status(500).json(err);
+    // };
 
 })
 

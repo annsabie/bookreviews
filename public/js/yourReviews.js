@@ -6,7 +6,7 @@ const updateReviewEventHandler = async function(event) {
     const submitButton = document.createElement('button');
     submitButton.innerHTML = 'submit';
     const book_id = event.target.parentElement.getAttribute("bookId");
-    const review_id = event.target.parentElement.getAttribute("idnumber");
+    const review_id = event.target.parentElement.getAttribute("reviewId");
     event.target.parentElement.appendChild(textBox);
     event.target.parentElement.appendChild(submitButton);
     submitButton.addEventListener('click', function(event) {

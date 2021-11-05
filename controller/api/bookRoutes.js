@@ -39,16 +39,18 @@ router.post('/', async(req, res) => {
 });
 
 router.post('/add-your-book', async(req, res) => {
-    // bookId,
-    // bookName,
-    // authorName,
-    // bookDescription
-    // try {
-        // console.log('object :>> ', req.session);
+
         const addBookUser = await BookUser.create({
             user_id: req.session.user_id,
             book_id: req.body.bookId,
         });
+
+        res.status(200).json("success");
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    };
+
         console.log(req.body)
 
         /*
@@ -76,6 +78,7 @@ router.post('/add-your-book', async(req, res) => {
     //     res.status(500).json(err);
     // };
 
+
 })
 
 router.delete('/:id', async(req, res) => {
@@ -89,7 +92,6 @@ router.delete('/:id', async(req, res) => {
             res.status(404).json({ message: 'No book found with this id!' });
             return;
         }
-
         res.status(200).json({ message: "Book deleted!" });
     } catch (err) {
         res.status(500).json(err);

@@ -109,6 +109,22 @@ footer {
 #Allbooks {
     font-family: serif;
 }
+
+
+#add-book-form {
+    padding: 20px;
+}
+
+#addbutton:hover {
+    background-color: #60B9FF;
+    color: whitesmoke;
+}
+
+#addbutton {
+    margin-top: 15px;
+    background-color: #C989FF;
+}
+=======
 #aboutUs{
     text-align: center;
 }
@@ -196,3 +212,4 @@ footer {
         font-size: 15px;
     }
   }
+

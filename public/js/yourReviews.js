@@ -37,4 +37,4 @@ const updateReviewRoute = async function(review_id, book_id, reviewContent) {
     } else {
         alert("didn't work bitch!");
     }
-}
+};

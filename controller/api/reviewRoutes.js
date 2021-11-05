@@ -6,12 +6,10 @@ router.get('/:id', async(req, res) => {
         const reviewData = await Review.findByPk(req.params.id, {
             include: [{ model: Book }],
         });
-
         if (!reviewData) {
             res.status(404).json({ message: 'No review found with that id!' });
             return;
         }
-
         res.status(200).json(reviewData);
     } catch (err) {
         res.status(500).json(err);

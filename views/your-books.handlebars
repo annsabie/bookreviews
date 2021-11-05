@@ -3,11 +3,10 @@
 <div class="card" id="booksDiv">
   {{#each userBookData as |userBook|}}  
   <h2 class="card-header">{{userBook.book_name}}</h2>
-  <div class="card-body">
+  <div class="card-body" bookId={{userBook.id}}>
     <h5 class="card-title">{{userBook.author_name}}</h5>
     <p class="card-text">{{userBook.book_description}}</p>
-    <button href="#" class="btn btn-primary addReview" id="{{userBook.book_id}}">Write a review</button>
-    <button href="#" class="btn btn-primary" id="writeAReview">Delete from your books</button>
+    <button href="#" class="btn btn-primary addReview">Write a review</button>
   </div>
 {{/each}}
 </div>

@@ -25,13 +25,13 @@
   
   <h3 class="card-header">Review Of {{review.book.book_name}}</h3>
   <h4 class="idnumber" >{{review.id}}</h4>
-  <div class="card-body" bookId={{book.id}} idnumber={{review.id}}>
-    <h5 class="card-title">By: {{book.author_name}}</h5>
+  <div class="card-body" reviewId={{review.id}}>
+    <h5 class="card-title">By: {{review.book.author_name}}</h5>
     <h6 class="card-text" id="reviewText">{{review.reviews}}</h6>
 
     <button href="#" class="btn btn-primary updateReview">Update review </button>
    
-    <button href="#" class="btn btn-primary" id="deleteReview">Delete Review</button>
+    <button href="#" class="btn btn-primary deleteReview">Delete Review</button>
   </div>
   {{/each}}
 </div>

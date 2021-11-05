@@ -20,7 +20,7 @@ router.get('/find-books', async(req, res) => {
         const mapData = await Book.findAll();
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
-        console.log(bookData);
+        // console.log(bookData);
         res.render('find-books', { bookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);

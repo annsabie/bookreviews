@@ -103,8 +103,96 @@ footer {
     margin-top: 30px;
     background-color: #D4ECFF;
     margin-bottom: 0%;
+    padding-top: -70%;
 }
 
 #Allbooks {
     font-family: serif;
 }
+#aboutUs{
+    text-align: center;
+}
+/* #githubLinks{
+    display: inline;
+    text-align: center;
+    background-color: black;
+} */
+#footerheader{
+    text-align: center;
+}
+#githubLinks{
+    text-align: center;
+}
+/* Media queries */
+@media screen and (max-width: 1149px) {
+    #homepageText {
+        margin-top: 1%;
+        padding: 1%;
+    }
+    
+    #homepageText h4 {
+        font-size: 80px;
+    }
+    
+    #subtitle {
+        font-size: 50px;
+    }
+    
+    #homepageText p {
+        font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 991px){
+    #homepageText {
+        margin-top: 0.13px;
+        padding: 0.13px;
+    }
+    
+    #homepageText h4 {
+        font-size: 70px;
+    }
+    
+    #subtitle {
+        font-size: 40px;
+    }
+    
+    #homepageText p {
+        font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    #homepageText {
+        margin-top: 0.11px;
+        padding: 0.11px;
+    }
+    
+    #homepageText h4 {
+        font-size: 60px;
+    }
+    
+    #subtitle {
+        font-size: 30px;
+    }
+    
+    #homepageText p {
+        font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 540px){
+    #homepageText {
+        margin-top: 0.9px;
+        padding: 0.9px;
+    }
+    
+    #homepageText h4 {
+        font-size: 50px;
+    }
+    
+    #subtitle {
+        font-size: 20px;
+    }
+    
+    #homepageText p {
+        font-size: 15px;
+    }
+  }

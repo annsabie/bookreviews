@@ -12,7 +12,6 @@ const writeReviewEventHandler = async function(event) {
     submitButton.addEventListener('click', function(event) {
         const book_id = event.target.parentElement.getAttribute("bookId");
         let reviewContent = textBox.value;
-        alert(book_id);
 
         createNewReview(book_id, reviewContent);
     })

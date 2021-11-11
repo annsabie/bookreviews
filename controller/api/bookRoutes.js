@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Book, BookUser, Review } = require('../../models');
+const { Book, BookUser, Review } = require('../../models');
 
 router.get('/', async(req, res) => {
     try {
@@ -52,30 +52,11 @@ router.post('/add-your-book', async(req, res) => {
     };
 
     console.log(req.body)
-
-    /*
-    const bookUserData = bookUserRaw.map(bookUserObj => bookUserObj.get({ plain: true }))
-
-    const bookDataRaw = await Book.findByPk(req.params.id);
-    const bookData = bookDataRaw.map(bookObj => bookObj.get({ plain: true }))
-    */
-
-    // const userBookData = bookData.filter(bookObj => {
-    //     return bookUserData.some(bookUserObj => {
-    //         if (bookUserObj.book_id === bookObj.id) {
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     })
-    // })
-    // console.log(addBookUser);
     res.status(200).json("success");
 
     res.render('your-books', { userBookData });
 
 })
-
 
 router.delete('/:id', async(req, res) => {
     try {

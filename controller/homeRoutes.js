@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const { User, Book, BookUser, Review } = require('../models');
+const { Book, BookUser, Review } = require('../models');
 
 router.get('/', async(req, res) => {
     try {
         const mapData = await Book.findAll();
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
-        console.log(bookData);
         res.render('homepage', { bookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
@@ -19,7 +18,6 @@ router.get('/find-books', async(req, res) => {
         const mapData = await Book.findAll();
         const bookData = mapData.map(bookObj => bookObj.get({ plain: true }))
 
-        // console.log(bookData);
         res.render('find-books', { bookData, loggedIn: req.session.logged_in });
     } catch (err) {
         console.log(err);
